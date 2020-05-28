@@ -1,0 +1,57 @@
+.nav{
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 40px;
+    background: rgb(52, 58, 64);
+}
+
+a{
+    text-decoration: none;
+    font-size: 2em;
+}
+
+h1{
+    margin-bottom: 60px;
+}
+
+.container-md{
+    text-align: center;
+}
+
+.lead{
+    font-size: 2em;
+}
+
+.btn{
+    margin: 30px 0 50px 0;
+}
+.lista .btn{
+    margin: 0 5px 0 5px
+}
+
+.lista td{
+    text-align: center;
+}
+
+.formulario{
+    padding: 50px 30px 0 50px;
+    text-align: left;
+}
+
+label{
+    font-weight: 500;
+    font-size: 1.2em;
+}
+.table{
+    margin-bottom: 50px;
+}
+
+.nav-tab{
+    font-size: 0.6em;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+

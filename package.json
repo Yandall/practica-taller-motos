@@ -1,0 +1,16 @@
+{
+  "name": "practica-api-paginas",
+  "version": "1.0.0",
+  "description": "API para guardar paginas web y url de interes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steven",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3",
+    "pg": "^8.0.2"
+  }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Mantenimiento</title>
+</head>
+<body>
+
+    <nav class="navbar nav">
+        <a class="navbar-brand" href="/home">Taller de motos</a>
+        <form class="form-inline">
+          <button type="button" class="btn btn-outline-danger my-2 my-sm-0" onclick="logout()">Log out</button>
+        </form>
+      </nav>
+
+      <div class="container-md">
+        <div class="nav-tab">
+            <div class="list-group list-group-horizontal">
+                <a href="administrar" type="button" class="list-group-item list-group-item-action" id="btnAdministrar">Administrar usuarios</a>
+                <a href="gestionMoto" type="button" class="list-group-item list-group-item-action" id="btnRegistrar">Registrar/Actualizar moto</a>
+                <a href="asignar" type="button" class="list-group-item list-group-item-action" id="btnAsignar">Asignar mantenimiento</a>
+                <a href="pendientes" type="button" class="list-group-item list-group-item-action active" id="btnPendientes">Mantenimientos pendientes</a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container-md">
+
+        <p class="lead">Selecciona una moto para realizar un mantenimiento</p>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Placa</th>
+                <th scope="col">Marca/Modelo</th>
+                <th scope="col">Vencimiento SOAT</th>
+                <th scope="col">Vencimiento tecnomecánica</th>
+                <th scope="col">Acciones</th>
+            </tr>
+            </thead>
+            <tbody id="listaPendientes" class="lista">
+            </tbody>
+        </table>
+
+        <form class="formulario">
+            <div class="form-group">
+                <label for="placa">Placa</label>
+                <input type="text" class="form-control" id="placa" minlength="6" maxlength="6" disabled>
+            <div class="form-group">
+                <label for="clase">Clase</label>
+                <input type="text" class="form-control" id="clase" disabled>
+            </div>
+            <div class="form-group">
+                <label for="marca">Marca</label>
+                <input type="text" class="form-control" id="marca" disabled>
+            </div>
+            <div class="form-group">
+                <label for="mode">Modelo</label>
+                <input type="text" class="form-control" id="modelo" maxlength="4" disabled>
+            </div>
+            <div class="form-group">
+                <label for="color">Color</label>
+                <input type="text" class="form-control" id="color" disabled>
+            </div>
+            <div class="form-group">
+                <label for="cilindraje">Cilindraje</label>
+                <input type="text" class="form-control" id="cilindraje" maxlength="4" disabled>
+            </div>
+            <div class="form-group">
+                <label for="nro_soat">Número SOAT</label>
+                <input type="text" class="form-control" id="nro_soat" disabled>
+            </div>
+            <div class="form-group">
+                <label for="nro_tecnomecanica">Número de tecnomecánica</label>
+                <input type="number" class="form-control" id="nro_tecnomecanica">
+            </div>
+            <div class="form-group">
+                <label for="vencimiento_tecnomecanica">Vencimiento de tecnomecánica</label>
+                <input type="date" class="form-control" id="vencimiento_tecnomecanica">
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <input type="text" class="form-control" id="estado">
+            </div>
+            <div class="form-group">
+                <label for="trabajos_realizados">Trabajos realizados</label>
+                <textarea class="form-control" id="trabajos_realizados"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="horas_invertidas">Horas invertidas</label>
+                <input type="number" class="form-control" id="horas_invertidas">
+            </div>  
+          </form>
+          
+          <button type="button" class="btn btn-primary" onclick="registrarMantenimiento()" id="btnCrear">Registrar mantenimiento</button>
+          
+
+          <p class="lead">Mantenimientos realizados</p>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Placa</th>
+                <th scope="col">Marca/Modelo</th>
+                <th scope="col">Trabajos realizados</th>
+                <th scope="col">Horas invertidas</th>
+            </tr>
+            </thead>
+            <tbody id="listaListos" class="lista">
+            </tbody>
+        </table>
+              
+    </div>
+    
+    <script src="pendientes.js"></script>
+    <script src="nav-tab.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
